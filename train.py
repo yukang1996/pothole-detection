@@ -82,7 +82,7 @@ class Solver(object):
         if self.weights_file is not None:
             print('Restoring weights from: ' + self.weights_file)
             self.restorer = tf.train.Saver()
-            model = tf.train.latest_checkpoint('C:\\Users\\User\\Documents\\Python Scripts\\Sublime\\yolov2-tensorflow-master\\data\\pascal_voc\\output\\2018_06_30_01_17\\')
+            model = tf.train.latest_checkpoint('/home/jiahuei/Documents/Woh/YOLO_small.ckpt')
             self.restorer.restore(self.sess, model)
             # self.restorer.restore(self.sess, self.weights_file)
             

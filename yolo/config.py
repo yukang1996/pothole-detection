@@ -15,7 +15,7 @@ OUTPUT_DIR = os.path.join(PASCAL_PATH, 'output')
 WEIGHTS_DIR = os.path.join(PASCAL_PATH, 'weights')
 
 # WEIGHTS_FILE = None
-WEIGHTS_FILE = 'data/pascal_voc/output/2018_06_30_01_17/save.ckpt-6000'
+WEIGHTS_FILE = '/home/jiahuei/Documents/Woh/YOLO_small.ckpt'
 
 # WEIGHTS_FILE = os.path.join('models', 'YOLO_small.ckpt')
 
