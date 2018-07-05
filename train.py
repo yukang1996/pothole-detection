@@ -17,7 +17,6 @@ def create_var_list(checkpoint_path):
     	print(x)
     	print('tensor_name',keys)
     	x+=1
-    exit()
     var_list = {}
     tvars = tf.trainable_variables()
     for i in range(54):
