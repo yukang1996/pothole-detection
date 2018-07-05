@@ -1,0 +1,36 @@
+<annotation>
+	<folder>VOC2007</folder>
+	<filename>26.jpg</filename>
+	<size>
+		<width>572</width>
+		<height>300</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>pothole</name>
+		<bndbox>
+			<xmin>23</xmin>
+			<ymin>49</ymin>
+			<xmax>76</xmax>
+			<ymax>84</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>pothole</name>
+		<bndbox>
+			<xmin>91</xmin>
+			<ymin>60</ymin>
+			<xmax>100</xmax>
+			<ymax>74</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>pothole</name>
+		<bndbox>
+			<xmin>65</xmin>
+			<ymin>38</ymin>
+			<xmax>86</xmax>
+			<ymax>47</ymax>
+		</bndbox>
+	</object>
+</annotation>
