@@ -167,7 +167,7 @@ class Detector(object):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', default=".\\data\\pascal_voc\\output\\2018_06_30_01_17\\save.ckpt-6000", type=str)
+    parser.add_argument('--weights', default=".data/pascal_voc/output/2018_07_06_20_14/save.ckpt-6000", type=str)
     parser.add_argument('--weight_dir', default='models', type=str)
     parser.add_argument('--data_dir', default="data", type=str)
     parser.add_argument('--gpu', default='2', type=str)
