@@ -52,11 +52,11 @@ class Solver(object):
         self.save_cfg()
         self.global_step = tf.get_variable(
            'global_step', [], initializer=tf.constant_initializer(0), trainable=False)
-        self.var_list = create_var_list(self.weights_file) # yk
-        self.variable_to_restore = tf.global_variables()
-        self.restorer = tf.train.Saver(self.var_list, max_to_keep=None) 
-        self.saver = tf.train.Saver(self.variable_to_restore, max_to_keep=None)
-        self.saver = tf.train.Saver(max_to_keep=None)
+        self.var_list = create_var_list(self.weights_file) 
+        # self.variable_to_restore = tf.global_variables() #yk
+        # self.restorer = tf.train.Saver(self.var_list, max_to_keep=None)  #yk
+        # self.saver = tf.train.Saver(self.variable_to_restore, max_to_keep=None) #yk
+        # self.saver = tf.train.Saver(max_to_keep=None) #yk
         self.ckpt_file = os.path.join(self.output_dir, 'save.ckpt')
         self.summary_op = tf.summary.merge_all()
         self.writer = tf.summary.FileWriter(self.output_dir, flush_secs=60)
@@ -80,9 +80,9 @@ class Solver(object):
         self.sess.run(tf.global_variables_initializer())
         if self.weights_file is not None:
             print('Restoring weights from: ' + self.weights_file)
-            # self.restorer = tf.train.Saver()  ````
-            # model = tf.train.latest_checkpoint('/home/jiahuei/Documents/Woh/YOLO_small.ckpt')
-            model = '/home/jiahuei/Documents/Woh/YOLO_small.ckpt'
+            self.restorer = tf.train.Saver() 
+            model = tf.train.latest_checkpoint('/home/jiahuei/Documents/Woh/pothole-detection/data/pascal_voc/output/2018_07_06_20_14/save.ckpt-6000')
+            # model = '/home/jiahuei/Documents/Woh/YOLO_small.ckpt'
             self.restorer.restore(self.sess, model)
             # self.restorer.restore(self.sess, self.weights_file)
             
@@ -187,7 +187,7 @@ def update_config_paths(data_dir, weights_file):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', default="YOLO_small.ckpt", type=str)
+    parser.add_argument('--weights', default="/home/jiahuei/Documents/Woh/pothole-detection/data/pascal_voc/output/2018_07_06_20_14/save.ckpt-6000", type=str)
     parser.add_argument('--data_dir', default="data", type=str)
     parser.add_argument('--threshold', default=0.2, type=float)
     parser.add_argument('--iou_threshold', default=0.5, type=float)
