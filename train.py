@@ -52,7 +52,7 @@ class Solver(object):
         self.save_cfg()
         self.global_step = tf.get_variable(
            'global_step', [], initializer=tf.constant_initializer(0), trainable=False)
-        self.var_list = create_var_list(self.weights_file) 
+        # self.var_list = create_var_list(self.weights_file) 
         # self.variable_to_restore = tf.global_variables() #yk
         # self.restorer = tf.train.Saver(self.var_list, max_to_keep=None)  #yk
         # self.saver = tf.train.Saver(self.variable_to_restore, max_to_keep=None) #yk
