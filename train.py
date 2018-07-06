@@ -54,7 +54,7 @@ class Solver(object):
            'global_step', [], initializer=tf.constant_initializer(0), trainable=False)
         self.var_list = create_var_list(self.weights_file) # yk
         self.variable_to_restore = tf.global_variables()
-        self.restorer = tf.train.Saver(self.var_list, max_to_keep=None) yk
+        self.restorer = tf.train.Saver(self.var_list, max_to_keep=None) 
         self.saver = tf.train.Saver(self.variable_to_restore, max_to_keep=None)
         self.saver = tf.train.Saver(max_to_keep=None)
         self.ckpt_file = os.path.join(self.output_dir, 'save.ckpt')
