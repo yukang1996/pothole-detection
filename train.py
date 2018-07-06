@@ -81,8 +81,9 @@ class Solver(object):
         if self.weights_file is not None:
             print('Restoring weights from: ' + self.weights_file)
             self.restorer = tf.train.Saver() 
-            model = tf.train.latest_checkpoint('/home/jiahuei/Documents/Woh/pothole-detection/data/pascal_voc/output/2018_07_06_20_14/save.ckpt-6000')
+            # model = tf.train.latest_checkpoint('/home/jiahuei/Documents/Woh/pothole-detection/data/pascal_voc/output/2018_07_06_20_14/save.ckpt-6000')
             # model = '/home/jiahuei/Documents/Woh/YOLO_small.ckpt'
+            model = '/home/jiahuei/Documents/Woh/pothole-detection/data/pascal_voc/output/2018_07_06_20_14/save.ckpt-6000'
             self.restorer.restore(self.sess, model)
             # self.restorer.restore(self.sess, self.weights_file)
             
