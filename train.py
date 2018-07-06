@@ -80,7 +80,7 @@ class Solver(object):
         self.sess.run(tf.global_variables_initializer())
         if self.weights_file is not None:
             print('Restoring weights from: ' + self.weights_file)
-            self.restorer = tf.train.Saver()
+            # self.restorer = tf.train.Saver()  ````
             # model = tf.train.latest_checkpoint('/home/jiahuei/Documents/Woh/YOLO_small.ckpt')
             model = '/home/jiahuei/Documents/Woh/YOLO_small.ckpt'
             self.restorer.restore(self.sess, model)
